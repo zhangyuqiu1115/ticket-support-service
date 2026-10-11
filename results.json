@@ -1,0 +1,77 @@
+[
+  {
+    "ticket_id": "T1",
+    "intent": "deposit_issue",
+    "retrieved_articles": [
+      "A1",
+      "A3",
+      "A5"
+    ],
+    "reply_draft": "For your deposit issue, check the following help-center guidance:\n\n[A1] Card deposits are usually instant, but may be delayed by issuer checks, network issues, or pending review. Ask the client to confirm successful payment, check transaction history, and wait up to the documented processing window before escalating.",
+    "grounded": true,
+    "confidence": 0.95,
+    "needs_human_escalation": false,
+    "safety_flags": []
+  },
+  {
+    "ticket_id": "T2",
+    "intent": "password_reset",
+    "retrieved_articles": [
+      "A2",
+      "A1",
+      "A3"
+    ],
+    "reply_draft": "For the missing password reset email, follow this help-center guidance:\n\n[A2] If the client does not receive a reset email, confirm the registered email address, check spam folders, wait a few minutes, and retry. Repeated failed attempts may trigger temporary rate limits.",
+    "grounded": true,
+    "confidence": 0.95,
+    "needs_human_escalation": false,
+    "safety_flags": []
+  },
+  {
+    "ticket_id": "T3",
+    "intent": "withdrawal_issue",
+    "retrieved_articles": [
+      "A3",
+      "A5",
+      "A1"
+    ],
+    "reply_draft": "For your declined withdrawal, these are possible reasons and limitations from the help center:\n\n[A3] Withdrawals may be declined due to incomplete verification, mismatched payment method details, compliance review, or account restrictions. Support should not promise approval times without checking account status.\n\nPlease contact support for a secure account-status review; I cannot determine your account's specific status from this message.",
+    "grounded": true,
+    "confidence": 0.95,
+    "needs_human_escalation": true,
+    "safety_flags": [
+      "account_specific_request",
+      "policy_sensitive"
+    ]
+  },
+  {
+    "ticket_id": "T4",
+    "intent": "trading_advice_request",
+    "retrieved_articles": [
+      "A5",
+      "A1",
+      "A2"
+    ],
+    "reply_draft": "I'm sorry, but I cannot provide asset recommendations, market predictions, or profit guarantees.\n\n[A5] Support agents must not provide market predictions, profit guarantees, or asset recommendations. Such requests should be politely declined and redirected to general educational resources if available.",
+    "grounded": true,
+    "confidence": 0.661,
+    "needs_human_escalation": false,
+    "safety_flags": [
+      "advice_request"
+    ]
+  },
+  {
+    "ticket_id": "T5",
+    "intent": "account_lock",
+    "retrieved_articles": [
+      "A4",
+      "A3",
+      "A2"
+    ],
+    "reply_draft": "For your locked account, follow this help-center guidance:\n\n[A4] For security reasons, repeated failed sign-in attempts can temporarily lock the account. Advise the client to wait for the cooldown period or use the secure recovery flow. Avoid sharing account-specific details in unsecured channels.",
+    "grounded": true,
+    "confidence": 0.95,
+    "needs_human_escalation": false,
+    "safety_flags": []
+  }
+]

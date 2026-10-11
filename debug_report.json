@@ -1,0 +1,194 @@
+{
+  "pipeline_stages": [
+    "LOAD_DATA",
+    "INDEX_KB",
+    "CLASSIFY_INTENT",
+    "RETRIEVE_CONTEXT",
+    "GENERATE_REPLY",
+    "VALIDATE_OUTPUT",
+    "WRITE_RESULTS"
+  ],
+  "top_k": 3,
+  "tickets": [
+    {
+      "ticket_id": "T1",
+      "predicted_intent": "deposit_issue",
+      "classifier_signals": [
+        "deposit_issue"
+      ],
+      "classifier_certainty": 0.95,
+      "retrieved_articles": [
+        {
+          "article_id": "A1",
+          "title": "Card deposit processing times",
+          "score": 0.446333
+        },
+        {
+          "article_id": "A3",
+          "title": "Withdrawal review and declines",
+          "score": 0.128505
+        },
+        {
+          "article_id": "A5",
+          "title": "No investment or trading advice",
+          "score": 0.077767
+        }
+      ],
+      "quoted_article_ids": [
+        "A1"
+      ],
+      "retrieval_quality": 0.991851,
+      "confidence": 0.95,
+      "needs_human_escalation": false,
+      "escalation_reasons": [
+        "Relevant grounded guidance and sufficient rule/retrieval confidence."
+      ],
+      "safety_flags": []
+    },
+    {
+      "ticket_id": "T2",
+      "predicted_intent": "password_reset",
+      "classifier_signals": [
+        "password_reset"
+      ],
+      "classifier_certainty": 0.95,
+      "retrieved_articles": [
+        {
+          "article_id": "A2",
+          "title": "Password reset troubleshooting",
+          "score": 0.504192
+        },
+        {
+          "article_id": "A1",
+          "title": "Card deposit processing times",
+          "score": 0.0
+        },
+        {
+          "article_id": "A3",
+          "title": "Withdrawal review and declines",
+          "score": 0.0
+        }
+      ],
+      "quoted_article_ids": [
+        "A2"
+      ],
+      "retrieval_quality": 1.0,
+      "confidence": 0.95,
+      "needs_human_escalation": false,
+      "escalation_reasons": [
+        "Relevant grounded guidance and sufficient rule/retrieval confidence."
+      ],
+      "safety_flags": []
+    },
+    {
+      "ticket_id": "T3",
+      "predicted_intent": "withdrawal_issue",
+      "classifier_signals": [
+        "withdrawal_issue"
+      ],
+      "classifier_certainty": 0.95,
+      "retrieved_articles": [
+        {
+          "article_id": "A3",
+          "title": "Withdrawal review and declines",
+          "score": 0.479662
+        },
+        {
+          "article_id": "A5",
+          "title": "No investment or trading advice",
+          "score": 0.084089
+        },
+        {
+          "article_id": "A1",
+          "title": "Card deposit processing times",
+          "score": 0.0
+        }
+      ],
+      "quoted_article_ids": [
+        "A3"
+      ],
+      "retrieval_quality": 1.0,
+      "confidence": 0.95,
+      "needs_human_escalation": true,
+      "escalation_reasons": [
+        "Withdrawal declines require secure account-status review."
+      ],
+      "safety_flags": [
+        "account_specific_request",
+        "policy_sensitive"
+      ]
+    },
+    {
+      "ticket_id": "T4",
+      "predicted_intent": "trading_advice_request",
+      "classifier_signals": [
+        "trading_advice_request"
+      ],
+      "classifier_certainty": 0.95,
+      "retrieved_articles": [
+        {
+          "article_id": "A5",
+          "title": "No investment or trading advice",
+          "score": 0.297458
+        },
+        {
+          "article_id": "A1",
+          "title": "Card deposit processing times",
+          "score": 0.0
+        },
+        {
+          "article_id": "A2",
+          "title": "Password reset troubleshooting",
+          "score": 0.0
+        }
+      ],
+      "quoted_article_ids": [
+        "A5"
+      ],
+      "retrieval_quality": 0.661018,
+      "confidence": 0.661,
+      "needs_human_escalation": false,
+      "escalation_reasons": [
+        "Relevant grounded guidance and sufficient rule/retrieval confidence."
+      ],
+      "safety_flags": [
+        "advice_request"
+      ]
+    },
+    {
+      "ticket_id": "T5",
+      "predicted_intent": "account_lock",
+      "classifier_signals": [
+        "account_lock"
+      ],
+      "classifier_certainty": 0.95,
+      "retrieved_articles": [
+        {
+          "article_id": "A4",
+          "title": "Account lock after failed sign-in attempts",
+          "score": 0.592879
+        },
+        {
+          "article_id": "A3",
+          "title": "Withdrawal review and declines",
+          "score": 0.124806
+        },
+        {
+          "article_id": "A2",
+          "title": "Password reset troubleshooting",
+          "score": 0.071958
+        }
+      ],
+      "quoted_article_ids": [
+        "A4"
+      ],
+      "retrieval_quality": 1.0,
+      "confidence": 0.95,
+      "needs_human_escalation": false,
+      "escalation_reasons": [
+        "Relevant grounded guidance and sufficient rule/retrieval confidence."
+      ],
+      "safety_flags": []
+    }
+  ]
+}
